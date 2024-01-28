@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Foreign-Trade-Website/static/css/main.e6c13ad2.css",
+    "main.js": "/Foreign-Trade-Website/static/js/main.6f180749.js",
+    "static/js/787.38f16daf.chunk.js": "/Foreign-Trade-Website/static/js/787.38f16daf.chunk.js",
+    "index.html": "/Foreign-Trade-Website/index.html",
+    "main.e6c13ad2.css.map": "/Foreign-Trade-Website/static/css/main.e6c13ad2.css.map",
+    "main.6f180749.js.map": "/Foreign-Trade-Website/static/js/main.6f180749.js.map",
+    "787.38f16daf.chunk.js.map": "/Foreign-Trade-Website/static/js/787.38f16daf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.6f180749.js"
+  ]
+}

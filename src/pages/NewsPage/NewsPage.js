@@ -8,13 +8,14 @@ function NewsPage () {
   return (
     <div>
       <SearchBar />
-      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Box sx={{ width: '50%' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+        <Box sx={{ width: '45%' }}>
           <NewsList />
         </Box>
-        <Box sx={{ width: '45%' }}>
+        <Box sx={{ width: '40%' }}>
           <VideoList />
         </Box>
+        <Box />
       </Box>
     </div>
   )

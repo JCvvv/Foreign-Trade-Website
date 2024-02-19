@@ -9,7 +9,8 @@ import Box from '@mui/material/Box'
 import NewsPage from '../pages/NewsPage/NewsPage'
 import RegionPage from '../pages/RegionPage/RegionPage'
 import AssessmentPage from '../pages/AssessmentPage/AssessmentPage'
-import AIPage from '../pages/AIPage'
+import AIPage from '../pages/AIPage/AIPage'
+import TeamPage from '../pages/TeamPage/TeamPage'
 
 const drawerWidth = 200
 
@@ -19,6 +20,7 @@ function HomePage () {
     { label: '地区查询', path: 'region', icon: 'region.png' },
     { label: '测评入口', path: 'assessment', icon: 'assessment.png' },
     { label: 'AI工具', path: 'ai', icon: 'ai.png' },
+    { label: '专业团队', path: 'team', icon: 'team.png' },
   ]
 
   return (
@@ -77,7 +79,8 @@ function HomePage () {
           <Route path="news" element={<NewsPage />} />
           <Route path="/region/*" element={<RegionPage />} />
           <Route path="/assessment/*" element={<AssessmentPage />} />
-          <Route path="ai" element={<AIPage />} />
+          <Route path="/ai/*" element={<AIPage />} />
+          <Route path="team" element={<TeamPage />} />
         </Routes>
       </main>
     </div>

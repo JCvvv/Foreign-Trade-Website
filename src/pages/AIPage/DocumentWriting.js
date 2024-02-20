@@ -28,7 +28,7 @@ const DocumentWriting = () => {
         messages: newMessages,
       }, {
         headers: {
-          'Authorization': 'Bearer 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',
+          'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
         },
       })
 
@@ -40,6 +40,7 @@ const DocumentWriting = () => {
 
     setInput('')
   }
+
 
 
   return (

@@ -28,7 +28,7 @@ const DocumentWriting = () => {
         messages: newMessages,
       }, {
         headers: {
-          'Authorization': 'Bearer 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',
+          'Authorization': 'Bearer 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',
         },
       })
 

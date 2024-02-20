@@ -7,25 +7,25 @@ const tools = [
     title: '文书写作',
     description: '自动生成高质量的文书内容，提高工作效率。帮助您快速完成报告、论文、申请书等文档的撰写。',
     imageUrl: require('../../pic/document.png'),
-    route: '/home/ai/document',
+    route: '/ai/document',
   },
   {
     title: '商务翻译',
     description: '准确、快速地翻译商务文件，跨越语言障碍。支持多种语言，保证翻译的专业性和准确性。',
     imageUrl: require('../../pic/business.png'),
-    route: '/home/ai/business',
+    route: '/ai/business',
   },
   {
     title: 'PPT快速生成',
     description: '快速生成精美的PPT，提升演示效果。自动化设计，让您的演示更加吸引人。',
     imageUrl: require('../../pic/ppt.png'),
-    route: '/home/ai/ppt',
+    route: '/ai/ppt',
   },
   {
     title: '图表绘制',
     description: '轻松绘制各种图表，直观展示数据。支持多种图表类型，满足不同的数据展示需求。',
     imageUrl: require('../../pic/chart.png'),
-    route: '/home/ai/chart',
+    route: '/ai/chart',
   },
 ]
 

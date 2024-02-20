@@ -7,19 +7,19 @@ const tools = [
     title: '人工翻译',
     description: '准确、快速地翻译商务文件，跨越语言障碍。支持多种语言，保证翻译的专业性和准确性。',
     imageUrl: require('../../pic/translation.png'),
-    route: '/home/team/translation',
+    route: '/team/translation',
   },
   {
     title: '专家大师课',
     description: '自动生成高质量的文书内容，提高工作效率。帮助您快速完成报告、论文、申请书等文档的撰写。',
     imageUrl: require('../../pic/master.png'),
-    route: '/home/team/master',
+    route: '/team/master',
   },
   {
     title: '同行一对一',
     description: '快速生成精美的PPT，提升演示效果。自动化设计，让您的演示更加吸引人。',
     imageUrl: require('../../pic/pear.png'),
-    route: '/home/team/pear',
+    route: '/team/pear',
   },
 
 ]

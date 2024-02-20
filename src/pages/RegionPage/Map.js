@@ -26,7 +26,7 @@ function Map () {
   const navigate = useNavigate()
 
   const handleCountryClick = (country) => {
-    navigate(`/home/region/detail?country=${country}`)
+    navigate(`/region/detail?country=${country}`)
   }
 
   return (

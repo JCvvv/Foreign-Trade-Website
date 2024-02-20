@@ -6,7 +6,7 @@ function PaidAssessment () {
   const navigate = useNavigate()
 
   const handleNavigate = () => {
-    navigate('/home/team')
+    navigate('/team')
   }
 
   return (

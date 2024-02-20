@@ -6,11 +6,11 @@ function Choice () {
   const navigate = useNavigate()
 
   const navigateToFreeAssessment = () => {
-    navigate('/home/assessment/free')
+    navigate('/assessment/free')
   }
 
   const navigateToPaidAssessment = () => {
-    navigate('/home/assessment/paid')
+    navigate('/assessment/paid')
   }
 
   return (

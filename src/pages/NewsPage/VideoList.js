@@ -3,16 +3,6 @@ import { Box, Typography, Card, CardContent, CardActionArea } from '@mui/materia
 import { Masonry } from '@mui/lab'
 import { styled } from '@mui/material/styles'
 
-// 动态导入图片
-const importImage = (imageName) => {
-  try {
-    return require(`../../pic/${imageName}`)
-  } catch (error) {
-    console.error(`Failed to load image ${imageName}:`, error)
-    return null // 返回一个默认图片或者null
-  }
-}
-
 // 自定义 MasonryItem 组件以适应不同高度的图片
 const MasonryItem = styled(Card)(({ theme }) => ({
   display: 'flex',
@@ -23,12 +13,12 @@ const MasonryItem = styled(Card)(({ theme }) => ({
 
 function VideoList () {
   const videos = [
-    { title: '视频1', url: 'https://example.com/video1', imageUrl: 'map.png' },
-    { title: '视频2', url: 'https://example.com/video2', imageUrl: 'map.png' },
-    { title: '视频3', url: 'https://example.com/video3', imageUrl: 'map.png' },
-    { title: '视频4', url: 'https://example.com/video4', imageUrl: 'map.png' },
-    { title: '视频5', url: 'https://example.com/video5', imageUrl: 'map.png' },
-    { title: '视频6', url: 'https://example.com/video6', imageUrl: 'map.png' },
+    { title: '视频1', url: 'https://example.com/video1', imageUrl: require('../../pic/map.png') },
+    { title: '视频2', url: 'https://example.com/video2', imageUrl: require('../../pic/map.png') },
+    { title: '视频3', url: 'https://example.com/video3', imageUrl: require('../../pic/map.png') },
+    { title: '视频4', url: 'https://example.com/video4', imageUrl: require('../../pic/map.png') },
+    { title: '视频5', url: 'https://example.com/video5', imageUrl: require('../../pic/map.png') },
+    { title: '视频6', url: 'https://example.com/video6', imageUrl: require('../../pic/map.png') },
     // 其他视频数据...
   ]
 
@@ -42,7 +32,7 @@ function VideoList () {
           <MasonryItem key={index}>
             <CardActionArea href={video.url} target="_blank">
               <img
-                src={importImage(video.imageUrl)}
+                src={video.imageUrl}
                 alt={video.title}
                 style={{ width: '100%', objectFit: 'cover' }}
               />

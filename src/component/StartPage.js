@@ -7,7 +7,7 @@ function StartPage () {
   const navigate = useNavigate()
 
   const handleClick = () => {
-    navigate('/home/news')
+    navigate('/news')
   }
 
   return (

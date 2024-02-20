@@ -496,7 +496,7 @@ function FreeAssessment () {
     const totalScore = scores.reduce((acc, score) => acc + score, 0) // Calculate the total score
     scores.push(totalScore) // Add the total score to the scores array
 
-    navigate('/home/assessment/report', { state: { scores } })
+    navigate('/assessment/report', { state: { scores } })
   }
 
 

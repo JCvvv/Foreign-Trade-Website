@@ -32,6 +32,9 @@ function HomePage () {
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between', // Adjust the layout to space between
           },
         }}
         variant="permanent"
@@ -58,20 +61,10 @@ function HomePage () {
           ))}
         </List>
 
-        <ListItem sx={{ position: 'absolute', bottom: 0, left: 0, width: '100%', marginBottom: '16px' }}>
-          <Box
-            sx={{
-              width: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <img src={require('../pic/user.png')} alt="胡老师" style={{ width: 60, height: 60, marginBottom: '8px' }} />
-            <ListItemText primary="胡然老师" />
-          </Box>
-        </ListItem>
+        <Box sx={{ width: '100%', textAlign: 'center' }}>
+          <img src={require('../pic/user.png')} alt="胡然老师" style={{ width: 60, height: 60, marginBottom: '8px' }} />
+          <ListItemText primary="胡然老师" />
+        </Box>
 
       </Drawer>
       <main style={{ flexGrow: 1, padding: '20px' }}>
@@ -80,7 +73,7 @@ function HomePage () {
           <Route path="/region/*" element={<RegionPage />} />
           <Route path="/assessment/*" element={<AssessmentPage />} />
           <Route path="/ai/*" element={<AIPage />} />
-          <Route path="team" element={<TeamPage />} />
+          <Route path="/team/*" element={<TeamPage />} />
         </Routes>
       </main>
     </div>

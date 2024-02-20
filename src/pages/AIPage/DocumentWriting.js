@@ -2,6 +2,9 @@
 import React, { useState } from 'react'
 import { Box, TextField, Button, Typography, Avatar, InputAdornment } from '@mui/material'
 import axios from 'axios'
+import botAvatar from '../../pic/botAvatar.png'
+import userAvatar from '../../pic/userAvatar.png'
+
 
 const DocumentWriting = () => {
   const [input, setInput] = useState('')
@@ -25,7 +28,7 @@ const DocumentWriting = () => {
         messages: newMessages,
       }, {
         headers: {
-          'Authorization': 'Bearer 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',
+          'Authorization': 'Bearer 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',
         },
       })
 
@@ -44,7 +47,7 @@ const DocumentWriting = () => {
       <Box sx={{ width: '95%', height: '75vh', overflowY: 'auto', marginBottom: 2, borderRadius: '10px', border: '1px solid #ccc' }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, padding: 2 }}>
           <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
-            <Avatar src={'/path/to/bot-avatar.png'} />
+            <Avatar src={botAvatar} />
             <Typography sx={{ marginLeft: 1, marginRight: 1, padding: 1, backgroundColor: '#e0e0e0', borderRadius: 2 }}>
               我是您的 AI 助手
             </Typography>
@@ -52,19 +55,27 @@ const DocumentWriting = () => {
           {messages.map((message, index) => (
             <Box key={index} sx={{ display: 'flex', justifyContent: message.role === 'user' ? 'flex-end' : 'flex-start' }}>
               {message.role !== 'user' && (
-                <Avatar src={'/path/to/bot-avatar.png'} />
+                <Avatar src={botAvatar} />
               )}
-              <Typography sx={{ marginLeft: 1, marginRight: 1, padding: 1, backgroundColor: message.role === 'user' ? '#b2fab4' : '#e0e0e0', borderRadius: 2 }}>
+              <Typography sx={{
+                marginLeft: 1,
+                marginRight: 1,
+                padding: 1,
+                backgroundColor: message.role === 'user' ? '#b2fab4' : '#e0e0e0',
+                borderRadius: 2,
+                maxWidth: 'calc(100% - 110px)' // 假设头像宽度为40px，两个头像总宽度为80px
+              }}>
                 {message.content}
               </Typography>
+
               {message.role === 'user' && (
-                <Avatar src={'/path/to/user-avatar.png'} />
+                <Avatar src={userAvatar} />
               )}
             </Box>
           ))}
         </Box>
       </Box>
-      <Box sx={{ width: '95%', display: 'flex', marginTop: '35px' }}>
+      <Box sx={{ width: '95%', display: 'flex', marginTop: '50px' }}>
         <TextField
           fullWidth
           value={input}

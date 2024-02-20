@@ -4,7 +4,10 @@ import { Box, TextField, Button, Typography, Avatar, InputAdornment } from '@mui
 import axios from 'axios'
 import botAvatar from '../../pic/botAvatar.png'
 import userAvatar from '../../pic/userAvatar.png'
+import CryptoJS from 'crypto-js'
 
+const secretKey = '112345' // 用于加密和解密的密钥
+const encryptedApiKey = 'U2FsdGVkX19nnQ7hcRt7UbOJXaMl5Jkjt6JK5Z1hjom1Jv8DBpTlsFesCL5WVvgUahbI/Iik+cLXA4EYhpqD7DobXi3nKJ0k4eUwi3oPJ0s=' // 你加密后的 API 密钥
 
 const DocumentWriting = () => {
   const [input, setInput] = useState('')
@@ -16,6 +19,17 @@ const DocumentWriting = () => {
 
 
 
+  // 加密函数
+  // const encrypt = (text) => {
+  //   return CryptoJS.AES.encrypt(text, secretKey).toString()
+  // }
+
+  // 解密函数
+  const decrypt = (cipherText) => {
+    const bytes = CryptoJS.AES.decrypt(cipherText, secretKey)
+    return bytes.toString(CryptoJS.enc.Utf8)
+  }
+
   const handleSubmit = async () => {
     if (!input.trim()) return
 
@@ -23,12 +37,15 @@ const DocumentWriting = () => {
     const newMessages = [...messages, userMessage]
 
     try {
+      const decryptedApiKey = decrypt(encryptedApiKey) // 解密 API 密钥
+
+
       const response = await axios.post('https://api.openai.com/v1/chat/completions', {
         model: 'gpt-3.5-turbo',
         messages: newMessages,
       }, {
         headers: {
-          'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
+          'Authorization': `Bearer ${decryptedApiKey}`,
         },
       })
 
